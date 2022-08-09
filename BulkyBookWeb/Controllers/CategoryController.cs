@@ -3,21 +3,27 @@ using BulkyBookWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Controllers
-		 {
-		 public class CategoryController : Controller
-					{
+		{
+		public class CategoryController : Controller
+				{
 
-					private readonly ApplicationDbContext _db;
+				private readonly ApplicationDbContext _db;
 
-					public CategoryController(ApplicationDbContext db)
-							 {
-							 _db = db;
-							 }
+				public CategoryController(ApplicationDbContext db)
+						{
+						_db = db;
+						}
 
-					public IActionResult Index()
-							 {
-							 IEnumerable<Category> objCatergoryList = _db.Categories;
-							 return View(objCatergoryList);
-							 }
-					}
-		 }
+				public IActionResult Index()
+						{
+						IEnumerable<Category> objCatergoryList = _db.Categories;
+						return View(objCatergoryList);
+						}
+				//GET
+				public IActionResult Create()
+						{
+
+						return View();
+						}
+				}
+		}
